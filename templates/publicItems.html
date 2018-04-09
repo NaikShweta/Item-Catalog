@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+{% block content %}
+<header class="row">
+	<div class="col-md-6 text-left">
+		<h1>{{catalog.name}}</h1>
+	</div>
+</header>
+
+<div class="row">
+	<div class="col-md-12">
+		<hr>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		{% for i in items %}
+		<h3>{{i.name}}</h3>
+		<p>{{i.description}}</p>
+		{% endfor %}
+	</div>
+	<div class="col-md-6 text-right">
+		<a href="{{url_for('catalog')}}"><h1>Back</h1></a>
+	</div>
+</div>
+{% endblock %}

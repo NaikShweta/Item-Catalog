@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block content %}
+<header class="row">
+	<div class="col-md-6 text-left">
+		<h1>Catalog App</h1>
+	</div>
+	<div class="col-md-6 text-right">
+		<a href="{{url_for('gdisconnect')}}"><h2>Logout</h2></a>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<hr>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<a href="{{url_for('newCatalog')}}"><h3>Create New Item</h3></a>
+		</div>
+	</div>
+
+	<div class="row">
+		{% for catalog in catalogs %}
+		<div class="col-md-6">
+			<a href="{{url_for('showItems', catalog_id=catalog.id)}}"><h2>{{catalog.name}}</h2></a>
+			<a href="{{url_for('editCatalog', catalog_id=catalog.id)}}"><h4>Edit</h4></a>
+			<a href="{{url_for('deleteCatalog', catalog_id=catalog.id)}}"><h4>Delete</h4></a>
+		</div>
+		{% endfor %}
+	</div>
+</header>
+{% endblock %}

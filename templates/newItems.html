@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{% block content %}
+<header class="row">
+	<div class="col-md-6">
+		<h1>New item in {{catalog.name}}</h1>
+	</div>
+</header>
+
+<div class="row">
+	<div class="col-md-12">
+		<hr>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<form action="{{url_for('newItems', catalog_id=catalog.id)}}" method="post">
+			<h3>Name:</h3>
+			<input type="text" name="name">
+			<h3>Description:</h3>
+			<input type="text" name="description">
+			<input type="submit" value="Create">
+		</form>
+	</div>
+	<div class="col-md-6">
+		<a href="{{url_for('showItems', catalog_id=catalog.id)}}"><h3>Back</h3></a>
+	</div>
+</div>
+{% endblock %}

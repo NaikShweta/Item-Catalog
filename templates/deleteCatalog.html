@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+{% block content %}
+<header class="row">
+	<div class="col-md-6">
+		<h1>Delete {{catalog.name}}</h1>
+	</div>
+</header>
+
+<div class="row">
+	<div class="col-md-6">
+		<hr>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<form action="{{url_for('deleteCatalog', catalog_id=catalog.id)}}" method="post">
+			<h3>Are you sure you want to delete {{catalog.name}}?</h3>
+			<input type="submit" value="Yes">
+		</form>
+	</div>
+	<div class="col-md-6">
+		<a href="{{url_for('catalog')}}"><h3>Back</h3></a>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+.textContainer{
+	height: 90px;
+	line-height: 90px;
+	font-size: 30px;
+}
+
+.catalog-list{
+	background-color: #F0F0F0;
+	padding: 20px;
+
+}

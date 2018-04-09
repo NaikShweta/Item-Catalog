@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+{% block content %}
+		<header class="row">
+			<div class="col-md-6 text-left">
+				<h1>Catalog App</h1>
+			</div>
+			<div class="col-md-6 text-right blacktext">
+				<a href="{{url_for('showLogin')}}"><h2>Login</h2></a>
+			</div>
+		</header>
+
+		<div class="row">
+			<div class="col-md-12">
+				<hr>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				{% for catalog in catalogs %}
+				<a href="{{url_for('showItems', catalog_id=catalog.id)}}"><h3>{{catalog.name}}</h3></a>
+				{% endfor %}
+			</div>
+		</div>
+{% endblock %}
